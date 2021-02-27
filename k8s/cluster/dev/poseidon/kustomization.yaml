@@ -4,3 +4,4 @@ resources:
 - namespace.yaml
 - triton-release.yaml
 - amphitrite-release.yaml
+- athena-release.yaml
