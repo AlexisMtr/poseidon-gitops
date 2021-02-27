@@ -24,3 +24,12 @@ metadata:
 spec:
   url: https://charts.jetstack.io
   interval: 10m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: emqx
+  namespace: flux-system
+spec:
+  url: https://repos.emqx.io/charts
+  interval: 10m
