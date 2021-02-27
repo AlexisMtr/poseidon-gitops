@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: triton
+  namespace: poseidon
+spec:
+  interval: 5m
+  releaseName: triton
+  chart:
+    spec:
+      chart: ./helm/triton
+      sourceRef:
+        kind: GitRepository
+        name: triton
+        namespace: flux-system
+  values:
+    ingress:
+      enabled: false
