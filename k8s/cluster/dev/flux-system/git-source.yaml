@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: triton
+  namespace: flux-system
+spec:
+  interval: 10m
+  ref:
+    branch: develop
+  url: https://github.com/AlexisMtr/Triton
