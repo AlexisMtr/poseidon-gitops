@@ -7,7 +7,7 @@ spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
-    name: flux-sytem
+    name: flux-system
   path: ./k8s/infrastructure/staging
   prune: true
   validation: client
