@@ -13,3 +13,8 @@ spec:
   path: ./k8s/app/development
   prune: true
   validation: client
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+      namespace: flux-system

@@ -8,7 +8,7 @@ spec:
   releaseName: ingress-controller
   chart:
     spec:
-      chart: nginx
+      chart: ingress-nginx
       version: '>=3.0.0'
       sourceRef:
         kind: HelmRepository

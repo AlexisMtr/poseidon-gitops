@@ -6,4 +6,8 @@ metadata:
 spec:
   values:
     env: development
-
+  valuesFrom:
+    - kind: Secret
+      name: amphitrite-secrets-release-values
+      valuesKey: values.yaml
+      optional: false
