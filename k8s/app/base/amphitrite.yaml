@@ -15,5 +15,4 @@ spec:
         name: poseidon
         namespace: flux-system
   values:
-    existingEnvSecret: amphitrite-my-secrets
     env: development
