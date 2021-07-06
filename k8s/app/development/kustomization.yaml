@@ -13,3 +13,5 @@ patchesStrategicMerge:
 - athena.patch.yaml
 configurations:
 - kustomizeconfig.yaml
+generatorOptions:
+  disableNameSuffixHash: true
