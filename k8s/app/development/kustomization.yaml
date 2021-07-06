@@ -11,3 +11,5 @@ patchesStrategicMerge:
 - amphitrite.patch.yaml
 - angelie.patch.yaml
 - athena.patch.yaml
+configurations:
+- kustomizeconfig.yaml
