@@ -6,6 +6,7 @@ secretGenerator:
 - name: amphitrite-secret-release-values
   files:
   - values.yaml=amphitrite.secrets.yaml
+  namespace: poseidon
 patchesStrategicMerge:
 - amphitrite.patch.yaml
 - angelie.patch.yaml
