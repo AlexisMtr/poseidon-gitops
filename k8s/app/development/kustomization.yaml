@@ -3,7 +3,7 @@ kind: Kustomization
 bases:
 - ../base
 secretGenerator:
-- name: amphitrite-secret-release-values
+- name: amphitrite-secrets-release-values
   files:
   - values.yaml=amphitrite.secrets.yaml
   namespace: poseidon
@@ -11,7 +11,3 @@ patchesStrategicMerge:
 - amphitrite.patch.yaml
 - angelie.patch.yaml
 - athena.patch.yaml
-configurations:
-- kustomizeconfig.yaml
-generatorOptions:
-  disableNameSuffixHash: true
