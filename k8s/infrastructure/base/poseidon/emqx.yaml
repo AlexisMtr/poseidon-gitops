@@ -15,6 +15,7 @@ spec:
         name: emqx
         namespace: flux-system
   values:
+    replicaCount: 1
     ingress:
       dashboard:
         enabled: true
