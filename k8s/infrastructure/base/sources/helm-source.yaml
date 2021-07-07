@@ -32,4 +32,4 @@ metadata:
   namespace: flux-system
 spec:
   url: https://repos.emqx.io/charts
-  interval: 10m
+  interval: 1440m

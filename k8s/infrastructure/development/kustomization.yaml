@@ -4,6 +4,7 @@ bases:
 - ../base/namespaces.yaml
 - ../base/ingress
 - ../base/cert-manager
+- ../base/poseidon
 - ../base/sources
 patchesStrategicMerge:
 - nginx.patch.yaml

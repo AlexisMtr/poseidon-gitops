@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: emqx
+  namespace: poseidon
+spec:
+  interval: 120m
+  releaseName: emqx
+  chart:
+    spec:
+      chart: emqx
+      version: '4.1.1'
+      sourceRef:
+        kind: HelmRepository
+        name: emqx
+        namespace: flux-system
+  values:
+    ingress:
+      dashboard:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
+        path: /emqx-dashboard
+        hosts:
+        - localhost
+      mgmt:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: nginx
+        path: /emqx-api
+        hosts:
+        - localhost
+    persistence:
+      enable: true
+    emqxConfig:
+      EMQX_LOADED_PLUGINS: "emqx_recon,emqx_retainer,emqw_management,emqx_dashboard,emqx_statsd"
