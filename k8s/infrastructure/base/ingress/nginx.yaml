@@ -22,6 +22,9 @@ spec:
         type: RollingUpdate
       replicaCount: 3
       minAvailable: 1
+      ingressClassResource:
+        enabled: true
+        default: true
     metrics:
       enabled: true
       serviceMonitor: true
