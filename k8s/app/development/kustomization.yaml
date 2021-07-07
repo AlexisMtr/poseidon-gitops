@@ -7,6 +7,10 @@ secretGenerator:
   files:
   - values.yaml=amphitrite.secrets.yaml
   namespace: poseidon
+- name: athena-secrets-release-values
+  files:
+  - values.yaml=athena.secrets.yaml
+  namespace: poseidon
 patchesStrategicMerge:
 - amphitrite.patch.yaml
 - angelie.patch.yaml

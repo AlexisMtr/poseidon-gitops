@@ -7,3 +7,10 @@ spec:
   values:
     environments:
       environment: Development
+      eventPublishTopic: telemetries_back
+      eventSubscribeTopic: telemetries
+  valuesFrom:
+    - kind: Secret
+      name: athena-secrets-release-values
+      valuesKey: values.yaml
+      optional: false
