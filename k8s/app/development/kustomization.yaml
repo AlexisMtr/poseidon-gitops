@@ -13,7 +13,7 @@ secretGenerator:
   namespace: poseidon
 - name: angelie-secrets-release-values
   files:
-  - values.yaml=anglie.secrets.yaml
+  - values.yaml=angelie.secrets.yaml
   namespace: poseidon
 patchesStrategicMerge:
 - amphitrite.patch.yaml
