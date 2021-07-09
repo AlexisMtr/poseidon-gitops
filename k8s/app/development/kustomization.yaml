@@ -11,6 +11,10 @@ secretGenerator:
   files:
   - values.yaml=athena.secrets.yaml
   namespace: poseidon
+- name: angelie-secrets-release-values
+  files:
+  - values.yaml=anglie.secrets.yaml
+  namespace: poseidon
 patchesStrategicMerge:
 - amphitrite.patch.yaml
 - angelie.patch.yaml
