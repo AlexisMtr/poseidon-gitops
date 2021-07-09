@@ -4,6 +4,7 @@ metadata:
   name: emqx
   labels:
     name: emqx
+  namespace: poseidon
 spec:
   ingressClassName: nginx
   rules:
