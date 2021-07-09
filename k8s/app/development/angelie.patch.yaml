@@ -4,4 +4,7 @@ metadata:
   name: angelie
   namespace: poseidon
 spec:
-
+  values:
+    environment: dev
+    mqtt:
+      server: emqx.poseidon.svc.cluster.local

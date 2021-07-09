@@ -16,21 +16,6 @@ spec:
         namespace: flux-system
   values:
     replicaCount: 1
-    ingress:
-      dashboard:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: nginx
-        path: /emqx-dashboard
-        hosts:
-        - localhost
-      mgmt:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: nginx
-        path: /emqx-api
-        hosts:
-        - localhost
     persistence:
       enable: true
     emqxConfig:
