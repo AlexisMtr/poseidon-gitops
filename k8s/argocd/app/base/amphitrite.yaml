@@ -15,6 +15,8 @@ spec:
       valueFiles:
         - values.yaml
       parameters:
+        - name: ingress.enabled
+          value: "true"
         - name: environment.dbConnectionString
           value: secret_value
         - name: environment.issuerKey
