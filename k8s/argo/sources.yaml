@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: poseidon-helm-chart
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: helm
+  url: https://alexismtr.github.io/poseidon-helm-chart
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: poseidon-gitops
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: https://github.com/AlexisMtr/poseidon-gitops

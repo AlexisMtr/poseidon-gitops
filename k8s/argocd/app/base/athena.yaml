@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: athena
+  namespace: argocd
+spec:
+  destination:
+    namespace: poseidon
+    server: https://kubernetes.default.svc
+  project: poseidon
+  source:
+    helm:
+      releaseName: athena
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: configuration.azFunction.functions.TelemetriesHttp.disabled
+          value: "false"
+    path: helm/athena
+    repoURL: https://github.com/AlexisMtr/athena.git
+    targetRevision: secret-ref
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true

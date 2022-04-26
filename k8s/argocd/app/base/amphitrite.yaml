@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: amphitrite
+  namespace: argocd
+spec:
+  destination:
+    namespace: poseidon
+    server: https://kubernetes.default.svc
+  project: poseidon
+  source:
+    chart: amphitrite
+    helm:
+      releaseName: amphitrite
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: environment.dbConnectionString
+          value: secret_value
+        - name: environment.issuerKey
+          value: "123456789951753456852"
+        - name: env
+          value: development
+    repoURL: https://alexismtr.github.io/poseidon-helm-chart
+    targetRevision: 2.0.1
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
