@@ -20,6 +20,7 @@ spec:
     repoURL: https://github.com/AlexisMtr/athena.git
     targetRevision: secret-ref
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
       - PruneLast=true

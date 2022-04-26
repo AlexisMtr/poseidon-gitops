@@ -26,6 +26,7 @@ spec:
     repoURL: https://alexismtr.github.io/poseidon-helm-chart
     targetRevision: 2.0.1
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
       - PruneLast=true
