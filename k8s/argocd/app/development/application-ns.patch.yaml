@@ -1,7 +1,0 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: i-dont-care
-spec:
-  destination:
-    namespace: $ARGOCD_APP_NAMESPACE
