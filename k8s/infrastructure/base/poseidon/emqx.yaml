@@ -9,10 +9,10 @@ spec:
   chart:
     spec:
       chart: emqx
-      version: '4.1.1'
+      version: "4.1.1"
       sourceRef:
         kind: HelmRepository
-        name: emqx
+        name: poseidon
         namespace: flux-system
   values:
     replicaCount: 1
