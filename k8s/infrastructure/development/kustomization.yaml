@@ -1,10 +1,29 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
-- ../base/namespaces.yaml
-- ../base/ingress
-- ../base/cert-manager
-- ../base/poseidon
-- ../base/sources
+  - ../base/namespaces.yaml
+  - ../base/ingress
+  - ../base/dapr-system
+  - ../base/storage-account
+  - ../base/cert-manager
+  - ../base/poseidon
+  - ../base/sources
 patchesStrategicMerge:
-- nginx.patch.yaml
+  - nginx.patch.yaml
+  - sqlserver.patch.yaml
+  - rabbit.patch.yaml
+configurations:
+  - kustomizeconfig.yaml
+secretGenerator:
+  - name: sqlserver-secrets-release-values
+    files:
+      - values.yaml=sqlserver.secrets.yaml
+    namespace: poseidon
+  - name: rabbit-secrets-release-values
+    files:
+      - values.yaml=rabbit.secrets.yaml
+    namespace: poseidon
+  - name: rabbit-connectionstring
+    files:
+      - rabbit-connection.secrets.yaml
+    namespace: poseidon

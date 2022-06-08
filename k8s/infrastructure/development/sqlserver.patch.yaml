@@ -1,11 +1,11 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: athena
+  name: sqlserver
   namespace: poseidon
 spec:
   valuesFrom:
     - kind: Secret
-      name: athena-secrets-release-values
+      name: sqlserver-secrets-release-values
       valuesKey: values.yaml
       optional: false

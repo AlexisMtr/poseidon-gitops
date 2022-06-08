@@ -33,3 +33,21 @@ metadata:
 spec:
   url: https://repos.emqx.io/charts
   interval: 1440m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: bitnami
+  namespace: flux-system
+spec:
+  url: https://charts.bitnami.com/bitnami
+  interval: 1440m
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: dapr
+  namespace: flux-system
+spec:
+  url: https://dapr.github.io/helm-charts/
+  interval: 1440m

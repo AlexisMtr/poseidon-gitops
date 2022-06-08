@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sqlserver
+  namespace: poseidon
+spec:
+  interval: 120m
+  releaseName: sqlserver
+  chart:
+    spec:
+      chart: linux/sample-helm-chart-statefulset-deployment
+      version: 0.1.0"
+      sourceRef:
+        kind: GitRepository
+        name: sqlserver
+        namespace: flux-system
+  values:
+    replicas: 1
+    service:
+      type: ClusterIP

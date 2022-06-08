@@ -9,10 +9,17 @@ spec:
   chart:
     spec:
       chart: amphitrite
-      version: '>=1.0.0'
+      version: "2.0.x"
       sourceRef:
         kind: HelmRepository
         name: poseidon
         namespace: flux-system
   values:
     env: development
+    ingress:
+      enabled: false
+      ingressClass: nginx
+      hosts:
+        - host: amphitrite.127-0-0-1.nip.io
+          paths:
+            - path: /

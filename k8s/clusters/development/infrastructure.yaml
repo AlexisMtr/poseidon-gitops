@@ -11,3 +11,7 @@ spec:
   path: ./k8s/infrastructure/development
   prune: true
   validation: client
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg

@@ -9,12 +9,32 @@ spec:
   chart:
     spec:
       chart: athena
-      version: '>=1.0.0'
+      version: "2.0.x"
       sourceRef:
         kind: HelmRepository
         name: poseidon
         namespace: flux-system
   values:
-    environments:
-      faRuntime: dotnet
-      faExtensionVersion: ~3
+    configuration:
+      azFunction:
+        functions:
+          DaprEvent:
+            disabled: false
+      pubSub:
+        topics:
+          publish: back
+          subscribe: telemetry
+        dapr:
+          pubComponentName: rabbitmq-pubsub
+          subComponentName: rabbitmq-pubsub
+    dapr:
+      enabled: true
+      app:
+        port: 3001
+    ingress:
+      enabled: false
+      ingressClassName: public
+      hosts:
+        - host: athena.127-0-0-1.nip.io
+          paths:
+            - path: /

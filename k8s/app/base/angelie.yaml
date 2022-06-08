@@ -9,8 +9,29 @@ spec:
   chart:
     spec:
       chart: angelie
-      version: '>=1.0.0'
+      version: "2.0.x"
       sourceRef:
         kind: HelmRepository
         name: poseidon
         namespace: flux-system
+  values:
+    replicaCount: 1
+    dapr:
+      enabled: true
+    configuration:
+      subscribe:
+        topic:
+          shared: true
+          group: angelie_device
+          name: devices/+/telemetry
+          regex: devices/(.*)/telemetry
+        dapr:
+          enabled: false
+        broker:
+          server: emqx-headless.poseidon.svc.cluster.local
+          port: 1883
+      publish:
+        topic: telemetry
+        dapr:
+          enabled: true
+          componentName: rabbitmq-pubsub

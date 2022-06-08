@@ -6,10 +6,3 @@ metadata:
 spec:
   values:
     environment: dev
-    mqtt:
-      server: emqx.poseidon.svc.cluster.local
-  valuesFrom:
-    - kind: Secret
-      name: angelie-secrets-release-values
-      valuesKey: values.yaml
-      optional: false
