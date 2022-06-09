@@ -5,7 +5,6 @@ bases:
   - ../base/ingress
   - ../base/dapr-system
   - ../base/storage-account
-  - ../base/cert-manager
   - ../base/poseidon
   - ../base/sources
 patchesStrategicMerge:
