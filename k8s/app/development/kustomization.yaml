@@ -11,9 +11,14 @@ secretGenerator:
     files:
       - values.yaml=athena.secrets.yaml
     namespace: poseidon
+  - name: triton-secrets-release-values
+    files:
+      - values.yaml=triton.secrets.yaml
+    namespace: poseidon
 patchesStrategicMerge:
   - amphitrite.patch.yaml
   - angelie.patch.yaml
   - athena.patch.yaml
+  - triton.patch.yaml
 configurations:
   - kustomizeconfig.yaml
